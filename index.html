@@ -6,17 +6,60 @@
     <title>Todo List - Fernanda</title>
 
     <!--CSS External-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS\style.css">
+
+    <!--Tailwind CSS CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
-<body>
-    <!--Header Content-->
-    <header></header>
+
+<body class="min-h-screen flex items-center justify-center bg-slate-900">
 
     <!--Main Content-->
-    <main></main>
+    <main class="bg-slate-800 text-white p-6 rounded-xl w-[500px] shadow-lg">
+         <!--Header Content-->
+        <header class="text-center">
+            <h1 class="text-2xl font-bold pb-6">To Do List - Fernanda</h1>
+        </header>
 
-    <!--Footer Content-->
-    <footer></footer>
+        <section>
+            <form class="flex gap-2">
+                <!--Todo Input-->
+                <input class="flex-1 border border-slate-600 bg-slate-700 p-2 rounded" type="text" id="todo-input" placeholder="Enter a new todo item">
+
+                <!--Date-->
+                <input class="border border-slate-600 bg-slate-700 p-2 rounded" type="date" id="todo-date" placeholder="Enter due date">
+            </form>
+        </section>
+
+        <!--Button Todo-->
+        <section class="flex justify-between mt-3">
+            <!--Add Button-->
+            <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600" onclick="addTodo()" type="button">Add Todo</button>
+
+             <!--Clear Button-->
+            <button class="border rounded p-2 bg-red-500 text-white" onclick="deleteAllTodo()">Clear All Todos</button>
+
+            <!--Filter Option-->
+            <button class="border rounded p-2 bg-indigo-500 text-white" onclick="filterTodo()">Filter Todos</button>
+        </section>
+    
+        <section class="pt-6">
+            <header>
+                <h1 class="text-2xl font-semibold mb-5">List of Todo's</h1>
+            </header>
+
+            <ul id="todo-list" class="bg-slate-900 rounded text-sm">
+                <li>No todo available now</li>
+            </ul>
+        </section>
+
+        <!--Footer Content-->
+        <footer class="pt-4">
+            <P class="text-center text-gray-100">@2026 Fernanda's todo App</P>
+        </footer>
+    </main>
+
 
     <!--javascript external-->
     <script src="js/script.js"></script>
